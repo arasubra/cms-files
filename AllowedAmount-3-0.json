@@ -1,0 +1,58 @@
+{
+  "attestation": {
+    "statements": [
+      "To the best of its knowledge and belief, this plan or issuer has included all applicable information in accordance with the requirements of 26 CFR 54.9815-2715A3, and the information encoded is true, accurate, and complete as of the date in the file."
+    ],
+    "attester": {
+      "name": "John Smith",
+      "title": "Chief Compliance Officer",
+      "organization": "ABC Health Insurance"
+    }
+  },
+  "schema_version": "3.0.0",
+  "reporting_entity": {
+    "name": "ABC Health Insurance",
+    "type": "health_insurance_issuer"
+  },
+  "market_segment": "large_group",
+  "reporting_period": {
+    "start": "2026-01-01",
+    "end": "2026-06-30"
+  },
+  "lookback_period": {
+    "start": "2026-01-01",
+    "end": "2026-09-30"
+  },
+  "last_updated_on": "2026-10-01",
+  "out_of_network": [
+    {
+      "billing_code_type": "CPT",
+      "billing_code_type_version": "2026",
+      "billing_code": "99213",
+      "description": "Established patient office visit",
+      "allowed_amounts": [
+        {
+          "tin": {
+            "ein": "12-3456789",
+            "business_name": "Coimbatore Specialty Clinic"
+          },
+          "billing_class": "professional",
+          "service_code": "11",
+          "billing_code_modifiers": [
+            "25"
+          ],
+          "payments": [
+            {
+              "allowed_amount": 120.5,
+              "billed_charge": 250.0,
+              "npi": [
+                "1234567890",
+                "2345678901"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,1 +1,72 @@
-{}
+{
+  "schema_version": "3.0.0",
+  "reporting_entity": {
+    "name": "AMPS",
+    "type": "third_party_administrator"
+  },
+  "reporting_period": {
+    "start": "2026-04-01",
+    "end": "2026-06-30"
+  },
+  "last_updated_on": "2026-05-01",
+  "attestation": {
+    "statements": [
+      "To the best of its knowledge and belief, this plan or issuer has included all applicable information in accordance with the requirements of 45 CFR 147.212, and the information encoded is true, accurate, and complete as of the date in the file."
+    ],
+    "attester": {
+      "name": "John Smith",
+      "title": "Chief Executive Officer",
+      "organization": "AMPS"
+    }
+  },
+  "networks": [
+    {
+      "network": {
+        "network_id": "NET-001",
+        "network_name": [
+          "AMPS Preferred Network"
+        ]
+      },
+      "negotiated_by": {
+        "name": "AMPS",
+        "arrangement": "own"
+      },
+      "in_network_files": [
+        {
+          "description": "AMPS Preferred Network In-Network Rate File",
+          "location": "https://raw.githubusercontent.com/arasubra/cms-files/main/InNetwork-3-0.json"
+        }
+      ]
+    }
+  ],
+  "plans": [
+    {
+      "plan": {
+        "plan_name": "AMPS Large Group PPO",
+        "issuer_name": "AMPS",
+        "plan_identifier": {
+          "ein": "12-3456789",
+          "plan_sponsor_name": "AMPS Employer Group"
+        },
+        "plan_market_type": "group",
+        "market_segment": "large_group",
+        "product_type": "ppo",
+        "group_numbers": [
+          "AMPS-GRP-001"
+        ]
+      },
+      "network_references": [
+        {
+          "network_id": "NET-001",
+          "precedence": 1
+        }
+      ]
+    }
+  ],
+  "allowed_amount_files": {
+    "large_group": {
+      "description": "Large Group Allowed Amount File",
+      "location": "https://raw.githubusercontent.com/arasubra/cms-files/main/AllowedAmount-3-0.json"
+    }
+  }
+}

@@ -1,0 +1,58 @@
+{
+  "attestation": {
+    "statements": [
+      "To the best of its knowledge and belief, this plan or issuer has included all applicable information in accordance with the requirements of 26 CFR 54.9815-2715A3, and the information encoded is true, accurate, and complete as of the date in the file."
+    ],
+    "attester": {
+      "name": "John Smith",
+      "title": "Chief Compliance Officer",
+      "organization": "AMPS"
+    }
+  },
+  "schema_version": "3.0.0",
+  "reporting_entity": {
+    "name": "AMPS",
+    "type": "third_party_administrator"
+  },
+  "market_segment": "small_group",
+  "reporting_period": {
+    "start": "2026-04-01",
+    "end": "2026-06-30"
+  },
+  "lookback_period": {
+    "start": "2026-04-01",
+    "end": "2026-09-30"
+  },
+  "last_updated_on": "2026-10-01",
+  "out_of_network": [
+    {
+      "billing_code_type": "CPT",
+      "billing_code_type_version": "2026",
+      "billing_code": "99214",
+      "description": "Established patient office visit - moderate complexity",
+      "allowed_amounts": [
+        {
+          "tin": {
+            "ein": "98-7654321",
+            "business_name": "AMPS Small Business Provider Network"
+          },
+          "billing_class": "professional",
+          "service_code": "11",
+          "billing_code_modifiers": [
+            "25"
+          ],
+          "payments": [
+            {
+              "allowed_amount": 95.00,
+              "billed_charge": 180.00,
+              "npi": [
+                "3456789012",
+                "4567890123"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

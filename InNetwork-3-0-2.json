@@ -1,0 +1,187 @@
+{
+  "schema_version": "3.0.0",
+  "reporting_entity": {
+    "name": "AMPS",
+    "type": "third_party_administrator"
+  },
+  "network": {
+    "network_id": "NET-002",
+    "network_name": [
+      "AMPS Preferred Network"
+    ]
+  },
+  "reporting_period": {
+    "start": "2026-04-03",
+    "end": "2026-06-22"
+  },
+  "last_updated_on": "2026-07-01",
+  "attestation": {
+    "statements": [
+      "To the best of its knowledge and belief, this plan or issuer has included all applicable information in accordance with the requirements of 45 CFR 147.212, and the information encoded is true, accurate, and complete as of the date in the file."
+    ],
+    "attester": {
+      "name": "John Smith",
+      "title": "Chief Executive Officer",
+      "organization": "AMPS"
+    }
+  },
+  "provider_groups": [
+    {
+      "provider_group_id": 1005,
+      "providers": [
+        {
+          "tin": {
+            "ein": "34-1893400",
+            "business_name": "Provider Group One"
+          },
+          "npi": [
+            "1366433100"
+          ]
+        }
+      ]
+    },
+    {
+      "provider_group_id": 1006,
+      "providers": [
+        {
+          "tin": {
+            "ein": "38-5239200",
+            "business_name": "Statewide Provider Network"
+          },
+          "npi": [
+            "1982226300"
+          ]
+        }
+      ]
+    }
+  ],
+  "payment_provisions": [
+    {
+      "provision_id": 1,
+      "provision_type": "outlier",
+      "applies_to": "referenced_rates",
+      "trigger": {
+        "measure": "billed_charges",
+        "threshold": 50000
+      },
+      "method": {
+        "negotiated_type": "percentage",
+        "rate": 80,
+        "basis": "billed_charges",
+        "application": "amount_above_threshold",
+        "relation_to_rate": "in_addition_to_rate"
+      },
+      "contract_text": "80% reimbursement above $50,000 billed charges."
+    },
+    {
+      "provision_id": 2,
+      "provision_type": "stop_loss",
+      "applies_to": "referenced_rates",
+      "trigger": {
+        "measure": "allowed_amount",
+        "threshold": 25000
+      },
+      "method": {
+        "negotiated_type": "percentage",
+        "rate": 90,
+        "basis": "allowed_amount",
+        "application": "amount_above_threshold",
+        "relation_to_rate": "greater_of_rate"
+      },
+      "contract_text": "Stop loss protection above $25,000."
+    }
+  ],
+  "capitation_arrangements": [
+    {
+      "capitation_id": 1,
+      "description": "Primary Care PMPM Agreement",
+      "provider_group_ids": [
+        1005
+      ],
+      "rate": 28.5,
+      "covered_services": [
+        {
+          "billing_code_type": "CPT",
+          "billing_code_type_version": "2026",
+          "range_start": "99201",
+          "range_end": "99215"
+        }
+      ],
+      "expiration_date": "2026-12-26"
+    },
+    {
+      "capitation_id": 2,
+      "description": "Specialist PMPM Arrangement",
+      "provider_group_ids": [
+        1006
+      ],
+      "rate": 40.0,
+      "covered_services": [
+        {
+          "billing_code_type": "CPT",
+          "billing_code_type_version": "2026",
+          "range_start": "10021",
+          "range_end": "69990"
+        }
+      ],
+      "expiration_date": "2026-12-31"
+    }
+  ],
+  "in_network": [
+    {
+      "negotiation_arrangement": "ffs",
+      "billing_code_type": "CPT",
+      "billing_code_type_version": "2026",
+      "billing_code": "70450",
+      "description": "CT Head without contrast",
+      "negotiated_rates": [
+        {
+          "provider_group_ids": [
+            1005
+          ],
+          "negotiated_prices": [
+            {
+              "negotiated_type": "negotiated",
+              "negotiated_rate": 195.0,
+              "billing_class": "professional",
+              "setting": "outpatient",
+              "service_code": [
+                "11"
+              ],
+              "expiration_date": "2026-12-31",
+              "payment_provision_ids": [
+                1
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "negotiation_arrangement": "ffs",
+      "billing_code_type": "HCPCS",
+      "billing_code_type_version": "2026",
+      "billing_code": "Q9957",
+      "description": "Inj perflutren lip microspheres",
+      "negotiated_rates": [
+        {
+          "provider_group_ids": [
+            1006
+          ],
+          "negotiated_prices": [
+            {
+              "negotiated_type": "negotiated",
+              "negotiated_rate": 600.5,
+              "billing_class": "institutional",
+              "setting": "inpatient",
+              "expiration_date": "2026-12-26",
+              "payment_provision_ids": [
+                2
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
